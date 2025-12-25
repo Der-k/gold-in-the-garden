@@ -1,0 +1,76 @@
+{
+  "placeholderImages": [
+    {
+      "id": "placeholder-1",
+      "description": "A crowd at a music festival",
+      "imageUrl": "https://images.unsplash.com/photo-1656401992374-5ce15b9a11fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bXVzaWMlMjBmZXN0aXZhbHxlbnwwfHx8fDE3NjU3MTkxMjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "music festival"
+    },
+    {
+      "id": "placeholder-2",
+      "description": "An art gallery with people looking at paintings",
+      "imageUrl": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhcnQlMjBnYWxsZXJ5fGVufDB8fHx8MTc2NTczNTY0MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "art gallery"
+    },
+    {
+      "id": "placeholder-3",
+      "description": "An outdoor stage set for a play at dusk",
+      "imageUrl": "https://images.unsplash.com/photo-1592899940358-89d9f5846c47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8b3V0ZG9vciUyMHRoZWF0ZXJ8ZW58MHx8fHwxNzY1Nzc4MDQ5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "outdoor theater"
+    },
+    {
+      "id": "placeholder-4",
+      "description": "A variety of colorful food on display at a market",
+      "imageUrl": "https://images.unsplash.com/photo-1589483233144-795633bf597c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxmb29kJTIwbWFya2V0fGVufDB8fHx8MTc2NTc2NDE4OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "food market"
+    },
+    {
+      "id": "placeholder-5",
+      "description": "A black woman singing passionately on stage",
+      "imageUrl": "https://images.unsplash.com/photo-1598387993441-24832f652652?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxibGFjayUyMHdvbWFuJTIwc2luZ2luZ3xlbnwwfHx8fDE3NjY0MjA1NjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman singing"
+    },
+    {
+      "id": "placeholder-6",
+      "description": "A person on a stage with a microphone telling a joke",
+      "imageUrl": "https://images.unsplash.com/photo-1580188928585-0ef5c1a5c4dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzdGFuZHVwJTIwY29tZWR5fGVufDB8fHx8MTc2NTc5OTI0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "standup comedy"
+    },
+    {
+      "id": "placeholder-7",
+      "description": "A scenic mountain landscape at sunrise",
+      "imageUrl": "https://images.unsplash.com/photo-1571782605941-8c8fd0d43df6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtb3VudGFpbiUyMGhpa2V8ZW58MHx8fHwxNzY1NzMyODIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mountain hike"
+    },
+    {
+      "id": "placeholder-8",
+      "description": "People running a marathon in a city",
+      "imageUrl": "https://images.unsplash.com/photo-1719299180483-90a4b609a946?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaXR5JTIwbWFyYXRob258ZW58MHx8fHwxNzY1Njg4ODM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city marathon"
+    },
+    {
+      "id": "placeholder-9",
+      "description": "A lavish wedding reception setup",
+      "imageUrl": "https://images.unsplash.com/photo-1594262332399-9d587235a584?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODZ8MHwxfHNlYXJjaHwzfHx3ZWRkaW5nJTIwcmVjZXB0aW9ufGVufDB8fHx8MTcyMDQ3MzQ2OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "wedding reception"
+    },
+    {
+      "id": "placeholder-10",
+      "description": "A corporate conference with many attendees",
+      "imageUrl": "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODZ8MHwxfHNlYXJjaHwyfHxjb3Jwb3JhdGUlMjBjb25mZXJlbmNlfGVufDB8fHx8MTcyMDQ3MzUwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "corporate conference"
+    },
+    {
+      "id": "placeholder-11",
+      "description": "A vibrant outdoor music festival stage",
+      "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODZ8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMGZlc3RpdmFsfGVufDB8fHx8MTcyMDQ3MzU0NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "music festival"
+    },
+    {
+      "id": "placeholder-12",
+      "description": "A modern art gallery exhibition",
+      "imageUrl": "https://images.unsplash.com/photo-1536924430914-94f6e84c2f49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODZ8MHwxfHNlYXJjaHw1fHxhcnQlMjBleGhpYml0aW9ufGVufDB8fHx8MTcyMDQ3MzU4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "art exhibition"
+    }
+  ]
+}
