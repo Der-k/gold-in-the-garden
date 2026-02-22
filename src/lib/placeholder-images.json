@@ -1,0 +1,100 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "A vibrant music festival scene at dusk",
+      "imageUrl": "https://images.unsplash.com/photo-1603190287605-e6ade32fa852?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtdXNpYyUyMGZlc3RpdmFsfGVufDB8fHx8MTc2OTg1OTA4MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "music festival"
+    },
+    {
+      "id": "artist1",
+      "description": "A portrait of a male musician with a guitar",
+      "imageUrl": "https://images.unsplash.com/photo-1599594407616-af1c058be616?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtdXNpY2lhbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2OTg3Njk2OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "musician portrait"
+    },
+    {
+      "id": "artist2",
+      "description": "A female singer performing on stage under lights",
+      "imageUrl": "https://images.unsplash.com/photo-1641686360126-dd8af8f90c9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzaW5nZXIlMjBzdGFnZXxlbnwwfHx8fDE3Njk4ODc1MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "singer stage"
+    },
+    {
+      "id": "artist3",
+      "description": "A DJ performing at a console with a crowd in the background",
+      "imageUrl": "https://images.unsplash.com/photo-1764510378781-b24294c5aba5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkaiUyMHBlcmZvcm1pbmd8ZW58MHx8fHwxNzY5ODkzNTI2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dj performing"
+    },
+    {
+      "id": "guest1",
+      "description": "Portrait of a man with glasses",
+      "imageUrl": "https://images.unsplash.com/photo-1569779213435-ba3167dde7cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBnbGFzc2VzfGVufDB8fHx8MTc2OTg3MjMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man glasses"
+    },
+    {
+      "id": "guest2",
+      "description": "Portrait of a woman with red hair and a beanie",
+      "imageUrl": "https://images.unsplash.com/photo-1639346633498-89a98fa00179?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b21hbiUyMGJlYW5pZXxlbnwwfHx8fDE3Njk5NzE1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman beanie"
+    },
+    {
+      "id": "guest3",
+      "description": "Portrait of a man with long dark hair",
+      "imageUrl": "https://images.unsplash.com/photo-1645224789292-aa35c6461a0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtYW4lMjBsb25nJTIwaGFpcnxlbnwwfHx8fDE3Njk4OTAwNTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man long hair"
+    },
+    {
+      "id": "portfolio1",
+      "description": "A classical painting of a couple on a swing in a lush forest.",
+      "imageUrl": "https://images.unsplash.com/photo-1569783721833-5b87c7a5f573?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbGFzc2ljYWwlMjBwYWludGluZyUyMHN3aW5nfGVufDB8fHx8MTcyMDAzODQzMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "classical painting"
+    },
+    {
+      "id": "portfolio2",
+      "description": "An oil painting portrait of Rembrandt.",
+      "imageUrl": "https://images.unsplash.com/photo-1617664842244-c7f93f6197d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyZW1icmFuZHQlMjBzZWxmJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzIwMDM4NDg3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "oil portrait"
+    },
+    {
+      "id": "portfolio3",
+      "description": "A pastel painting of a colorful bouquet of flowers in a vase.",
+      "imageUrl": "https://images.unsplash.com/photo-1568585099359-eab649b5c219?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwYXN0ZWwlMjBmbG93ZXJzJTIwdmFzZSUyMHBhaW50aW5nfGVufDB8fHx8MTcyMDAzODU0NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pastel flowers"
+    },
+    {
+      "id": "gallery1",
+      "description": "Crowd cheering at a music concert",
+      "imageUrl": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1080",
+      "imageHint": "concert crowd"
+    },
+    {
+      "id": "gallery2",
+      "description": "People dancing and enjoying a festival",
+      "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1080",
+      "imageHint": "festival dancing"
+    },
+    {
+      "id": "gallery3",
+      "description": "Colorful food truck at an outdoor event",
+      "imageUrl": "https://images.unsplash.com/photo-1576402182832-6178c02056a2?q=80&w=1080",
+      "imageHint": "food truck"
+    },
+    {
+      "id": "gallery4",
+      "description": "Glowing art installation at a night festival",
+      "imageUrl": "https://images.unsplash.com/photo-1511795403292-2207a161e682?q=80&w=1080",
+      "imageHint": "art installation"
+    },
+    {
+      "id": "gallery5",
+      "description": "Friends taking a selfie at a concert",
+      "imageUrl": "https://images.unsplash.com/photo-1546630392-db5f55394132?q=80&w=1080",
+      "imageHint": "festival selfie"
+    },
+    {
+      "id": "gallery6",
+      "description": "Bright stage lights at a music performance",
+      "imageUrl": "https://images.unsplash.com/photo-1499364615650-ec38552f4f34?q=80&w=1080",
+      "imageHint": "stage lights"
+    }
+  ]
+}
