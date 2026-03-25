@@ -1,97 +1,130 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Ticket, ArrowUpRight } from 'lucide-react'; 
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const artists = [
   {
-    name: 'Sauti Sol',
-    role: 'Afro-pop Band',
+    name: 'Mordecai Dex',
+    role: 'Singer-songwriter',
     imageId: 'artist1',
+    category: 'HEADLINER',
+    date: 'AUG 15 / 2026',
+    bgColor: 'bg-zinc-900', 
+    textColor: 'text-white',
     href: '#',
   },
   {
-    name: 'Nyashinski',
-    role: 'Hip-hop Artist',
-    imageId: 'artist2',
+    name: 'Kahuti',
+    role: 'Singer-songwriter',
+    imageId: 'artist4',
+    category: 'PERFORMANCE',
+    date: 'AUG 15 / 2026',
+    bgColor: 'bg-accent', 
+    textColor: 'text-white',
     href: '#',
   },
   {
-    name: 'Bensoul',
+    name: 'Gashohey',
     role: 'Singer-songwriter',
     imageId: 'artist3',
+    category: 'LIVE SOUL',
+    date: 'AUG 16 / 2026',
+    bgColor: 'bg-secondary', 
+    textColor: 'text-white',
     href: '#',
   },
 ];
 
 const ViewAllGuestsCard = () => (
   <Link
-    href="#"
-    className="group relative flex aspect-[3/4] items-center justify-center overflow-hidden rounded-lg bg-green-500 text-primary-foreground shadow-lg transition-all duration-300 hover:bg-green-600 hover:shadow-xl"
+    href="/artists"
+    className="group relative flex aspect-[3/4] flex-col justify-between overflow-hidden bg-primary p-8 transition-all duration-500 hover:brightness-110"
   >
-    <div className="relative flex h-full w-full items-center justify-center text-center">
-      <svg
-        viewBox="0 0 100 100"
-        className="absolute h-4/5 w-4/5 text-white drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
-        aria-hidden="true"
-      >
-        <path
-          stroke="black"
-          strokeWidth="3.5"
-          fill="currentColor"
-          d="M86.8,28.4L73.1,31.3L67,16.8l-10.9,11L41.6,21l-4.5,14.8L22,31.7l8.4,12.2L20.1,54.2l15.3,0.3l3.3,15.1l9.6-11.8l10.9,11.1l-1.3-15.5l14.2-3.8l-10.4-9.8L86.8,28.4z"
-        />
-      </svg>
-      <div className="relative z-10 font-bold text-black">
-        <span className="block text-lg">View All</span>
-        <span className="block text-lg">Guests</span>
-      </div>
+    <div className="flex justify-between items-start">
+      <span className="font-black text-black/40 text-[10px] tracking-[0.3em] font-sans">DISCOVER MORE</span>
+      <ArrowUpRight className="w-6 h-6 text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
     </div>
-    <span className="sr-only">View all guests</span>
+    
+    <div className="relative z-10">
+      <h3 className="text-5xl font-black text-black leading-[0.85] tracking-tighter italic font-headline lowercase">
+        View all<br />guests
+      </h3>
+    </div>
+    
+    <div className="pt-4 border-t border-black/20">
+      <p className="text-[10px] font-bold text-black/60 uppercase tracking-[0.2em] font-sans">Full 2026 Lineup</p>
+    </div>
   </Link>
 );
 
 export function ArtistShowcase() {
   return (
-    <section id="artists" className="py-20 lg:py-32 bg-background">
+    <section id="artists" className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight text-foreground">
-            Meet The Artists
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Get ready for an incredible lineup of Kenya's finest musical talents.
+        {/* Editorial Section Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8 border-b border-zinc-200 pb-12">
+          <div className="max-w-2xl">
+            <span className="text-[10px] font-black text-primary tracking-[0.5em] uppercase mb-4 block font-sans">
+              The Lineup
+            </span>
+            <h2 className="text-6xl md:text-8xl font-black text-zinc-900 leading-[0.8] tracking-tighter font-headline lowercase">
+              Meet the <br />
+              <span className="text-gilded italic">artists.</span>
+            </h2>
+          </div>
+          <p className="max-w-xs text-sm font-bold text-zinc-400 leading-relaxed uppercase tracking-tight font-sans">
+            A curated selection of musical mastery, hosted in nature's most beautiful setting.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {artists.map((artist) => {
-            const artistImage = PlaceHolderImages.find(
-              (img) => img.id === artist.imageId
-            );
+            const artistImage = PlaceHolderImages.find((img) => img.id === artist.imageId);
             return (
               <Link
                 href={artist.href}
                 key={artist.name}
-                className="group relative block aspect-[3/4] overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                className={`${artist.bgColor} group relative flex aspect-[3/4] flex-col justify-between p-8 transition-all duration-500 hover:scale-[1.02] z-10`}
               >
-                <Image
-                  src={artistImage?.imageUrl ?? 'https://picsum.photos/300/400'}
-                  alt={`Photo of ${artist.name}`}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  data-ai-hint={artistImage?.imageHint}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-center text-white">
-                  <h3 className="text-xl font-semibold drop-shadow-md">
+                {/* Top Metadata */}
+                <div className="space-y-1">
+                  <span className="block text-[10px] font-black tracking-[0.2em] opacity-60 uppercase font-sans">
+                    {artist.category}
+                  </span>
+                  <h3 className={`text-4xl font-black leading-[0.9] tracking-tighter font-headline lowercase ${artist.textColor}`}>
                     {artist.name}
                   </h3>
-                  <p className="text-sm opacity-90 drop-shadow">
-                    {artist.role}
-                  </p>
+                </div>
+
+                {/* Inset Image */}
+                <div className="relative w-full aspect-square overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 shadow-2xl">
+                  <Image
+                    src={artistImage?.imageUrl ?? 'https://picsum.photos/300/400'}
+                    alt={artist.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Bottom Metadata */}
+                <div className="pt-4 border-t border-white/20 flex justify-between items-end">
+                  <div>
+                    <p className="text-[9px] font-bold opacity-70 uppercase tracking-[0.2em] font-sans">
+                      {artist.role}
+                    </p>
+                    <p className="text-[10px] font-black text-primary uppercase mt-1 font-sans">
+                      {artist.date}
+                    </p>
+                  </div>
+                  <div className="bg-white/10 p-2 rounded-full">
+                    <ArrowUpRight className="w-4 h-4 text-white" />
+                  </div>
                 </div>
               </Link>
             );
           })}
+          
           <ViewAllGuestsCard />
         </div>
       </div>

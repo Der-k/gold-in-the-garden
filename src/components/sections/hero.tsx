@@ -10,124 +10,131 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { Instagram, Twitter, ArrowRight, Plus } from "lucide-react";
 
 const portfolioItems = [
-  {
-    title: 'Sauti Sol',
-    description: 'Afro-pop Band',
-    imageId: 'artist1',
-  },
-  {
-    title: 'Nyashinski',
-    description: 'Hip-hop Artist',
-    imageId: 'artist2',
-  },
-  {
-    title: 'Bensoul',
-    description: 'Singer-songwriter',
-    imageId: 'artist3',
-  },
-  {
-    title: 'Fena Gitu',
-    description: 'Urban Soul Artist',
-    imageId: 'guest2',
-  },
-  {
-    title: 'Nviiri The Storyteller',
-    description: 'Singer-songwriter',
-    imageId: 'guest1',
-  },
-  {
-    title: 'Khaligraph Jones',
-    description: 'Rapper',
-    imageId: 'guest3',
-  },
+  { title: 'Mordecai Dex', description: 'Singer-songwriter', imageId: 'artist1' },
+  { title: 'Faith Kimani', description: 'Singer-songwriter', imageId: 'artist2' },
+  { title: 'Gashohey', description: 'Singer-songwriter', imageId: 'artist3' },
+  { title: 'Kahuti', description: 'Singer-songwriter', imageId: 'artist4' },
+  { title: 'Billy Black', description: 'Singer-songwriter', imageId: 'artist5' },
 ];
-
 
 export function Hero() {
   const heroImage = PlaceHolderImages.find((img) => img.id === "hero");
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+  const plugin = React.useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
+
+  // Reusable Carousel Component
+  const ArtistCarousel = () => (
+    <Carousel
+      plugins={[plugin.current]}
+      opts={{ align: "start", loop: true }}
+      className="w-full"
+    >
+      <CarouselContent className="-ml-4">
+        {portfolioItems.map((item) => {
+          const itemImage = PlaceHolderImages.find((img) => img.id === item.imageId);
+          return (
+            <CarouselItem key={item.title} className="basis-[75%] md:basis-[45%] pl-4">
+              <div className="group relative overflow-hidden rounded-[2rem] bg-zinc-950 aspect-[3.5/4.5] shadow-2xl transition-all duration-500 hover:scale-[1.03]">
+                <Image
+                  src={itemImage?.imageUrl ?? 'https://picsum.photos/400/533'}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex flex-col justify-end p-6">
+                  <h3 className="text-xl font-black text-white leading-tight tracking-tight uppercase italic group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-[9px] font-bold text-white/40 uppercase tracking-[0.2em] mt-1">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            </CarouselItem>
+          );
+        })}
+      </CarouselContent>
+    </Carousel>
   );
 
   return (
-    <section className="relative w-full">
+    <section className="relative w-full min-h-screen flex items-stretch bg-transparent">
+      {/* 1. Parallax Background - Always Present */}
       <div
-        className="absolute inset-0 -z-10 h-full w-full"
-      >
-        <Image
-          src={heroImage?.imageUrl ?? "https://picsum.photos/1920/1080"}
-          alt="Hero background"
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint={heroImage?.imageHint}
-        />
-      </div>
-      <div className="absolute inset-0 bg-black/60" />
-      <div className="relative z-10 flex min-h-[calc(100vh-64px)] w-full items-center justify-center text-center text-white">
-        <div className="container mx-auto flex flex-col items-center justify-center gap-8 px-4 py-12 md:gap-12 md:py-16">
-            <div className="flex flex-col items-center justify-center">
-                <h1 className="font-headline text-5xl font-bold leading-tight tracking-tighter drop-shadow-lg sm:text-6xl md:text-7xl lg:text-8xl">
-                Gold in the Garden
-                </h1>
-                <p className="font-body mt-6 max-w-2xl text-base text-primary-foreground/90 drop-shadow-md sm:text-lg md:text-xl">
-                Experience the golden era of Kenyan music under the stars. An
-                unforgettable night of live performances, art, and culture.
-                </p>
+        className="absolute inset-0 -z-20 h-full w-full parallax-bg"
+        style={{ backgroundImage: `url(${heroImage?.imageUrl ?? "https://picsum.photos/1920/1080"})` }}
+      />
+      {/* Dark Overlay to make white text readable on mobile parallax */}
+      <div className="absolute inset-0 -z-10 bg-black/50 lg:hidden" />
+      <div className="absolute inset-0 -z-10 bg-black/20 hidden lg:block" />
+
+      <div className="flex flex-col lg:flex-row w-full">
+        {/* CONTENT COLUMN */}
+        <div className="w-full lg:w-[45%] bg-transparent lg:bg-white px-8 py-16 lg:px-20 lg:py-24 flex flex-col justify-between z-10 min-h-screen lg:min-h-0">
+          <div className="space-y-8 lg:space-y-12">
+            <div className="flex items-center gap-4">
+              {/* FIXED LOGO: Removed brightness-0 invert so original colors show */}
+              <Image 
+                src="/images/gold.png" 
+                alt="Logo" 
+                width={160} 
+                height={40} 
+                className="object-contain" 
+              />
+              <div className="h-4 w-px bg-white/20 lg:bg-zinc-200" />
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/60 lg:text-zinc-400">Live 2026</span>
             </div>
 
-            <div className="w-full max-w-sm rounded-lg bg-background/20 p-4 text-foreground backdrop-blur-sm md:max-w-4xl lg:max-w-6xl">
-                <div className="container mx-auto">
-                    <div className="mb-4 flex items-center justify-center gap-2">
-                        <div className="h-px w-8 bg-border/50" />
-                        <h2 className="text-center text-sm font-semibold uppercase tracking-wider text-white/80">
-                            Performing Artists
-                        </h2>
-                        <div className="h-px w-8 bg-border/50" />
-                    </div>
-
-                    {/* Desktop and Mobile Carousel */}
-                    <Carousel
-                        plugins={[plugin.current]}
-                        onMouseEnter={plugin.current.stop}
-                        onMouseLeave={plugin.current.reset}
-                        opts={{
-                            align: "start",
-                            loop: true,
-                        }}
-                        className="w-full"
-                    >
-                        <CarouselContent className="-ml-1">
-                            {portfolioItems.map((item) => {
-                                const itemImage = PlaceHolderImages.find((img) => img.id === item.imageId);
-                                return (
-                                    <CarouselItem key={item.title} className="basis-1/2 md:basis-1/3 lg:basis-1/5 pl-1">
-                                        <div className="text-center group relative">
-                                            <Image
-                                                src={itemImage?.imageUrl ?? 'https://picsum.photos/200/200'}
-                                                alt={item.title}
-                                                width={250}
-                                                height={250}
-                                                className="w-full h-auto rounded-lg object-cover mx-auto aspect-square"
-                                                data-ai-hint={itemImage?.imageHint}
-                                            />
-                                            <div className="absolute bottom-0 left-0 right-0 bg-black/50 p-2 rounded-b-lg">
-                                              <h3 className="text-sm font-semibold text-white truncate">{item.title}</h3>
-                                              <p className="text-xs text-white/80 truncate">{item.description}</p>
-                                            </div>
-                                        </div>
-                                    </CarouselItem>
-                                );
-                            })}
-                        </CarouselContent>
-                    </Carousel>
-                </div>
+            <div className="space-y-6">
+              <h1 className="text-6xl lg:text-8xl font-black text-white lg:text-zinc-900 leading-[0.85] tracking-tighter uppercase">
+                Golden <br />
+                <span className="text-gilded">Era,</span> <br />
+                Now.
+              </h1>
+              <p className="max-w-xs text-sm font-bold text-white/80 lg:text-zinc-400 uppercase tracking-tight leading-relaxed">
+                Nature meets luxury. <br />Experience the fusion of soul and soil.
+              </p>
             </div>
-            <Button asChild size="lg">
-              <Link href="#tickets">Get Your Tickets</Link>
+
+            {/* ARTIST SECTION: Visible on Mobile between text and button */}
+            <div className="block lg:hidden my-10">
+               <div className="flex items-center gap-3 mb-6">
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Featuring Artists</span>
+                <div className="h-px flex-1 bg-white/10" />
+              </div>
+              <ArtistCarousel />
+            </div>
+
+            <Button asChild className="btn-gold h-14 px-8 text-sm rounded-none shadow-none w-full lg:w-max">
+              <Link href="#tickets" className="flex items-center gap-4 justify-center">
+                BOOK EXPERIENCE <ArrowRight className="h-4 w-4" />
+              </Link>
             </Button>
+          </div>
+
+          <div className="mt-16 pt-8 border-t border-white/10 lg:border-zinc-100 flex items-center justify-between">
+            <div className="flex gap-6">
+              <Link href="#" className="text-white/60 lg:text-zinc-400 hover:text-primary transition-colors"><Instagram className="h-4 w-4" /></Link>
+              <Link href="#" className="text-white/60 lg:text-zinc-400 hover:text-primary transition-colors"><Twitter className="h-4 w-4" /></Link>
+            </div>
+            <span className="text-[9px] font-bold text-white/40 lg:text-zinc-300 tracking-widest uppercase">KICC Nairobi</span>
+          </div>
+        </div>
+
+        {/* DESKTOP RIGHT COLUMN */}
+        <div className="hidden lg:flex w-full lg:w-[55%] items-center justify-center p-12 relative">
+          <div className="w-full max-w-3xl bg-transparent border border-white/20 p-12 rounded-[3.5rem] relative">
+            <div className="flex items-center justify-between mb-10">
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Headliners</span>
+              <Plus className="w-4 h-4 text-white/40" />
+            </div>
+
+            <ArtistCarousel />
+
+            <div className="absolute -bottom-1 -right-1 w-24 h-24 border-r-2 border-b-2 border-primary rounded-br-[3.5rem]" />
+          </div>
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { User, ShoppingCart, Menu, Home, Info, Music, Ticket, Image as ImageIcon, Store, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { Search } from "lucide-react";
 
 export function Header() {
   return (
@@ -21,6 +22,12 @@ export function Header() {
                 <Link href="/gallery" className="flex items-center gap-2 hover:text-primary transition-colors"><ImageIcon className="h-4 w-4" />Gallery</Link>
                 <Link href="/vendors" className="flex items-center gap-2 hover:text-primary transition-colors"><Store className="h-4 w-4" />Vendors</Link>
                 <Link href="/#contact" className="flex items-center gap-2 hover:text-primary transition-colors"><Mail className="h-4 w-4" />Contact</Link>
+               <Link
+  href="/ai-search"
+  className="flex items-center gap-2 hover:text-primary transition-colors"
+><Search className="h-4 w-4" />
+  AI Search
+</Link>
             </nav>
         </div>
 
@@ -58,7 +65,15 @@ export function Header() {
                                 <SheetClose asChild><Link href="/#tickets" className="flex items-center gap-4 hover:text-primary transition-colors"><Ticket className="h-5 w-5" />Tickets</Link></SheetClose>
                                 <SheetClose asChild><Link href="/gallery" className="flex items-center gap-4 hover:text-primary transition-colors"><ImageIcon className="h-5 w-5" />Gallery</Link></SheetClose>
                                 <SheetClose asChild><Link href="/vendors" className="flex items-center gap-4 hover:text-primary transition-colors"><Store className="h-5 w-5" />Vendors</Link></SheetClose>
-                                <SheetClose asChild><Link href="/#contact" className="flex items-center gap-4 hover:text-primary transition-colors"><Mail className="h-5 w-5" />Contact</Link></SheetClose>
+                               <SheetClose asChild>
+  <Link
+    href="/ai-search"
+    className="flex items-center gap-4 hover:text-primary transition-colors"
+  >
+    <Search className="h-5 w-5" />
+    AI Search
+  </Link>
+</SheetClose>
                             </nav>
                             <div className="border-t pt-6">
                                 <Button variant="outline" asChild className="w-full">
