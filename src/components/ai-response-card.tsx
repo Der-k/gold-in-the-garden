@@ -7,48 +7,50 @@ type SearchFilters = {
   vibe?: string | null;
   audience?: string | null;
   isFree?: boolean | null;
+  matchedTags?: string[];
 };
 
 type Props = {
   reply: string | null;
-  filters: any;
+  filters: SearchFilters | null;
   resultCount: number;
 };
 
 export function AIResponseCard({ reply, filters, resultCount }: Props) {
   if (!reply) return null;
 
+  const chips: string[] = [];
+
+  if (filters?.city) chips.push(filters.city);
+  if (filters?.category) chips.push(filters.category);
+  if (filters?.genre) chips.push(filters.genre);
+  if (typeof filters?.priceMax === "number") chips.push(`Under KSh ${filters.priceMax}`);
+  if (filters?.isFree) chips.push("Free");
+  if (filters?.matchedTags?.length) chips.push(...filters.matchedTags.slice(0, 2));
+
   return (
-    <div className="mt-4 rounded-[28px] border border-neutral-200 bg-white p-6 shadow-[0_10px_40px_rgba(0,0,0,0.05)]">
-      
-      {/* Label */}
-      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-400">
+    <div className="rounded-[22px] border border-neutral-200 bg-white p-4 shadow-[0_10px_40px_rgba(0,0,0,0.05)] sm:rounded-[28px] sm:p-6">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-neutral-400 sm:text-[11px]">
         AI Insight
       </p>
 
-      {/* Main response */}
-      <p className="mt-3 text-lg font-semibold leading-7 text-neutral-900 md:text-xl">
+      <p className="mt-3 text-base font-semibold leading-7 text-neutral-900 sm:text-lg md:text-xl">
         {reply}
       </p>
 
-      {/* Meta row */}
-      <div className="mt-5 flex flex-wrap items-center gap-3 text-sm text-neutral-500">
-        
-        <span className="rounded-full bg-neutral-100 px-3 py-1">
+      <div className="mt-4 flex flex-wrap items-center gap-2 sm:gap-3">
+        <span className="rounded-full bg-neutral-100 px-3 py-1 text-xs text-neutral-600">
           {resultCount} result{resultCount === 1 ? "" : "s"}
         </span>
 
-        {filters?.city && (
-          <span className="rounded-full bg-neutral-100 px-3 py-1">
-            {filters.city}
+        {chips.slice(0, 4).map((chip) => (
+          <span
+            key={chip}
+            className="rounded-full bg-neutral-100 px-3 py-1 text-xs text-neutral-600"
+          >
+            {chip}
           </span>
-        )}
-
-        {filters?.category && (
-          <span className="rounded-full bg-neutral-100 px-3 py-1">
-            {filters.category}
-          </span>
-        )}
+        ))}
       </div>
     </div>
   );
