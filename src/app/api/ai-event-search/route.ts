@@ -135,7 +135,24 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "A valid query is required." }, { status: 400 });
     }
 
-    const ai = await extractReplyAndFiltersWithGroq(query, sampleEvents);
+    let ai;
+    try {
+      ai = await extractReplyAndFiltersWithGroq(query, sampleEvents);
+    } catch (err) {
+      console.error("Groq parsing failed:", err);
+      ai = {
+        reply: "I could not use AI parsing right now, but here are the closest matches.",
+        filters: {
+          city: null,
+          category: null,
+          genre: null,
+          priceMax: null,
+          isFree: null,
+          matchedTags: [],
+        },
+      };
+    }
+
     const results = scoreAndFilterEvents(query, ai.filters, sampleEvents);
 
     return NextResponse.json({

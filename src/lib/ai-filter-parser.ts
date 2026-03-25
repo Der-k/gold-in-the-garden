@@ -1,4 +1,4 @@
-import { groq } from "@/lib/groq";
+import { getGroqClient } from "@/lib/groq";
 
 type EventItem = {
   id: string;
@@ -41,6 +41,8 @@ export async function extractReplyAndFiltersWithGroq(
   query: string,
   events: EventItem[]
 ): Promise<AIResult> {
+  const groq = getGroqClient();
+
   const cities = uniqueValues(events, "city");
   const categories = uniqueValues(events, "category");
   const genres = uniqueValues(events, "genre");
