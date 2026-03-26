@@ -149,13 +149,7 @@ async function handleSearch(searchText: string) {
               </div>
             ) : null}
 
-            <div className="mt-4 max-w-3xl">
-              <AIResponseCard
-                reply={reply}
-                filters={filters}
-                resultCount={results.length}
-              />
-            </div>
+           
           </div>
         </div>
 
@@ -185,13 +179,21 @@ async function handleSearch(searchText: string) {
       </div>
     </div>
 
-    <div className="px-4 py-6 sm:px-6 sm:py-8 md:px-8">
-      <AISearchResults
-        filters={filters}
-        results={results}
-        loading={loading}
-      />
-    </div>
+   <div className="px-4 py-6 sm:px-6 sm:py-8 md:px-8">
+  <div className="mb-6">
+    <AIResponseCard
+      reply={reply}
+      filters={filters}
+      resultCount={results.length}
+    />
+  </div>
+
+  <AISearchResults
+    filters={filters}
+    results={results}
+    loading={loading}
+  />
+</div>
   </div>
 </section>
       </section>
