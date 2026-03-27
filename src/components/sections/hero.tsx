@@ -81,7 +81,7 @@ export function Hero() {
   const heroImage = PlaceHolderImages.find((img) => img.id === "hero");
 
   return (
-    <section className="relative w-full min-h-[100svh] lg:min-h-screen flex items-stretch bg-transparent">
+    <section className="relative w-full min-h-screen flex items-stretch bg-transparent">
       <div
         className="absolute inset-0 -z-20 h-full w-full parallax-bg"
         style={{
@@ -92,7 +92,7 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 bg-black/20 hidden lg:block" />
 
       <div className="flex flex-col lg:flex-row w-full">
-      <div className="w-full lg:w-[45%] bg-transparent lg:bg-white px-8 py-16 lg:px-20 lg:py-24 flex flex-col justify-between z-10 min-h-[100svh] lg:min-h-0">
+        <div className="w-full lg:w-[45%] bg-transparent lg:bg-white px-8 py-16 lg:px-20 lg:py-24 flex flex-col justify-between z-10 min-h-screen lg:min-h-0">
           <div className="space-y-8 lg:space-y-12">
             <div className="flex items-center gap-4">
               <Image
